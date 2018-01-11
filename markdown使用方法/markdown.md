@@ -45,8 +45,10 @@ Markdown的用法
 
 ###只是显示图片，这里用的是相对路径: <br />
 ![github-01.jpg](/images/01.jpg "github-01.jpg")
-![image](https://github.com/fypShirley/text/blob/master/markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
-
+写法2：" ![image](https://github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) "<br />
+![image](https://github.com/fypShirley/text/raw/master/markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
+写法3：<br />" ![index](https://github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) "
+![index](https://github.com/fypShirley/text/raw/master/markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
 
 ### 显示图片也可以用原生的html标签（小标题）
 <img src="http://su.bdimg.com/static/superplus/img/logo_white.png" />
