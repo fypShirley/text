@@ -40,15 +40,14 @@ Markdown的用法
 [点击这里你可以链接到www.google.com](http://www.baidu.com)<br />
 
 
-###只是显示百度的图片
+###百度的图片
 ![baidu-images](http://www.baidu.com/img/bdlogo.png "baidu")  
 
-###只是显示图片，这里用的是相对路径: <br />
-写法1：\!\[image\](文件名/文件名/01.jpg) <br /> <br />
-![image](markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
-写法2：\!\[image\](https://github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) <br />
+###显示图片，
+
+写法1：\!\[image\](https:\//github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) <br />
 ![image](https://github.com/fypShirley/text/raw/master/markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
-写法3： \!\[index\](https://github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) <br />
+写法2： \!\[index\](https:\//github.com/名称/项目名/raw/master/文件名/文件名/01.jpg) <br />
 ![index](https://github.com/fypShirley/text/raw/master/markdown%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/images/01.jpg)
 
 ### 显示图片也可以用原生的html标签（小标题）
