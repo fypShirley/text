@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>special</title>
+    <style>
+        #div1{width: 200px;height: 200px;background: red;}
+        #div2{width:150px;height: 150px;background: yellow;}
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+<span id=span1>span</span>
+
+<script src="jQ2.3.js"></script>
+
+<script>
+     /**
+     * jQuery.event = {
+        global      事件的全局属性，（源码还没用到）
+        add         三个重要的事件
+        remove      三个重要的事件
+        trigger     三个重要的事件  主动触发事件  冒泡/默认行为/特殊事件处理
+        dispatch    分发事件的具体操作
+        handlers    函数执行顺序的操作  委托的先执行
+        props       jQ中共享原生JS的event属性
+        fixHooks    收集event兼容的集合
+        keyHooks    键盘的event兼容
+        mouseHooks  鼠标的event兼容
+        fix         对event对象的兼容处理
+        special     特殊事件的处理
+            {
+                load            noBubble:true不可冒泡
+                focus           trigger
+                blur            deletefateType
+                click           _default
+                beforeunload    postDispatch
+                mouseenter      preDispatch
+                mouseleave      setup
+                focusin         teardown
+                focusout        bindType handle
+            }
+        simulate    focusin的模拟操作，（trigger,dispatch）
+    }
+    jQuery.Event = {}
+    jQuery.Event.prototype = {
+        isDefaultPrevented
+        isPropagationStopped
+        idImmediatePropagationStopped
+        preventDafault
+        stopPropagation
+        stopImmediatePropagation
+    }
+    // 实例方法：
+    jQuery.fn.extend({
+        on             ->jQuery.event.add
+        one            ->上面的on
+        off            ->jQuery.event.remove
+        trigger       ->jQuery.event.trigger
+        triggerHandler ->jQuery.event.trigger(4个参数)
+    })
+
+    //6720:
+    click/mouseover/... ->on/trigger
+    //6732:
+    jQuery.fn.extend({
+        hover           ->mouseenter/mouseleave
+        bind            ->on
+        unbind          ->off
+        delegate        ->on
+        undelegate      ->off
+
+    })
+     * **/
+
+</script>
+<script>
+    window.onload = function(){
+        var div1 = document.getElementById('div1');
+        var div2 = document.getElementById('div2');
+        var span1 = document.getElementById('span1');
+
+        div1.onmouseover = function(ev){
+            var ev = ev || window.event;
+            var a = this;
+            var b = ev.relatedTarget;/* 相对的目标元素，操作之前的鼠标在的元素 */
+            if(!elContains(a,b) && a!=b){
+                span1.innerHTML += '1';
+            }
+        
+        }
+        div1.onmouseout = function(ev){
+            var ev = ev || window.event;
+            var a = this;
+            var b = ev.relatedTarget;
+            if(!elContains(a,b) && a!=b){
+                span1.innerHTML += '2';
+            }
+        }//从黄的到红的：21
+    }
+    /* 
+    1：body到红的
+        this -> div1
+        relatedTarget->body
+    2：红的到黄的    不走if
+        this -> div1
+        relatedTarget->div1
+    3：黄的到红的    不走if
+        this -> div1
+        relatedTarget->div2
+    */
+
+    function elContains(a,b){
+        return a.contains ? a!=b && a.contains(b) : !!(a.conmpareDocumentPosition(b) & 16)
+    }
+</script>
+
+</body>
+</html>

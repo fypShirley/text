@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>special</title>
+    <style>
+        #div1{width: 100px;height: 100px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1">
+    <input type="text">
+</div>
+<span id=span1>span</span>
+
+<input type="checkbox" id="checkbox">
+<br/>
+<a href="baidu.com"></a>
+<script src="jQ2.3.js"></script>
+
+<script>
+     /**
+     * jQuery.event = {
+        global      事件的全局属性，（源码还没用到）
+        add         三个重要的事件
+        remove      三个重要的事件
+        trigger     主动触发事件 
+        dispatch    分发事件的具体操作
+        handlers    函数执行顺序的操作
+        props       jQ中共享原生JS的event属性
+        fixHooks    收集event兼容的集合
+        keyHooks    键盘的event兼容
+        mouseHooks  鼠标的event兼容
+        fix         对event对象的兼容处理
+        special     特殊事件的处理
+            {
+                load            noBubble:true不可冒泡
+                focus           
+                blur
+                click
+                beforeunload
+                mouseenter
+                mouseleave
+                focusin
+                focusout
+            }
+        simulate    focusin的模拟操作，（trigger,dispatch）
+    }
+    jQuery.Event = {}
+    jQuery.Event.prototype = {
+        isDefaultPrevented
+        isPropagationStopped
+        idImmediatePropagationStopped
+        preventDafault
+        stopPropagation
+        stopImmediatePropagation
+    }
+    // 实例方法：
+    jQuery.fn.extend({
+        on             ->jQuery.event.add
+        one            ->上面的on
+        off            ->jQuery.event.remove
+        trigger       ->jQuery.event.trigger
+        triggerHandler ->jQuery.event.trigger(4个参数)
+    })
+
+    //6720:
+    click/mouseover/... ->on/trigger
+    //6732:
+    jQuery.fn.extend({
+        hover           ->mouseenter/mouseleave
+        bind            ->on
+        unbind          ->off
+        delegate        ->on
+        undelegate      ->off
+
+    })
+     * **/
+
+</script>
+<script>
+
+$(function(){
+    /* $('#div1').on('click',function(){
+        alert(1);
+    })
+    $('input').on('click',function(){
+        alert(2);
+    })
+
+    $(window).on('load',function(){}) 
+    $('img').on('load',function(){})  //只走这里不走window的load
+
+    $('input').trigger('click');
+    $('img').trigger('load'); */
+
+
+   /*  $('#div1').on('input',function(){
+        alert(1);
+    })
+    $('input').on('input',function(){
+        alert(2);
+    })
+    $('input').trigger('focus');//不会冒泡到div */
+
+
+    /* $('#div1').delegate('input','focus',function(){
+        alert(1);
+    }); */
+
+   /*  $('#checkbox').on('click',function(){})
+    $('#checkbox').trigger('click')//选中
+
+    $('a').on('click',function(){alert(1)});
+    $('a').trigger('click');// */
+
+    $(window).on('beforeunload',function(){
+        return 123;
+    })//事件之心后，关闭窗口，询问
+
+
+    $('#div1').on('focusin',function(){
+        alert(1);
+    })//点击input也会触发，光标的触发
+
+    $('input').trigger('focusin');
+})
+</script>
+
+</body>
+</html>

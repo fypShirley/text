@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>support</title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+<script>
+
+     /**
+     *attr();
+      * document.getElementById('div1').setAttribute('name','hello');
+      * alert(document.getElementById('div1').setAttribute('name');)
+     *  **/
+
+     /**
+     *prop();
+      * document.getElementById('div1')['name'] = 'hello';
+      * alert(document.getElementById('div1')['name'])
+     *  **/
+
+     /**DOM元素与对象之间互相引用，大部分浏览器就会出现内存泄漏
+      *
+      *
+      * var oDiv = document.getElementById('div1');
+      var obj = {};
+
+      oDiv.name = obj;
+      obj.age = oDiv;
+      * */
+
+     /**
+      *data(); 原理：
+      *
+      * <div id="div1" XXX=""></div>
+      * $('#div1').data('name',obj);
+      *$('body').data('age',obj);
+      *
+      * .data防止内存泄漏
+      * 内部有个 var cache = {
+            1:{name:obj},
+            2:{age:obj}
+       };
+      *
+      *
+      *  **/
+
+$(function(){
+    $('#div1').attr('name','hello');
+
+})
+
+
+</script>
+<div id="div1"></div>
+</body>
+</html>

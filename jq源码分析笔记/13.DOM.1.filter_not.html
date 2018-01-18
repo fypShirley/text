@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>划分</title>
+    <style>
+        div{width: 100px;height: 50px;background: #ccc;}
+        .box{background:lightblue;}
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div></div>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    一些变量
+    jQuery.fn.event({
+        find
+        has
+        not
+        filter
+        is
+        closest
+        index
+        add
+        addBack
+    })
+    function sibling(){}
+    jQuery.each({
+        parent
+        parents
+        parentsUntil
+        next
+        prev
+        nextAll
+        prevAll
+        nextUntil
+        prevUntil
+        siblings
+        children
+        contents
+    })
+    jQuery.extend({
+        filter
+        dir
+        sibling
+    })
+    function winnow(){}
+    一些变量
+    jQuery.fn.extend({
+        text
+        append
+        prepend
+        before 
+        after
+        remove
+        empty
+        clone
+        html
+        replaceWith
+        detach
+        domManip
+    })
+    jQuery.each({
+        appendTo:"append"
+        prependTo:"prepend"
+        insertBefore:"before"
+        insertAfter:"after"
+        replaceAll:"replaceWith"
+    })
+    jQuery.extend({
+        clone
+        buildFragment
+        cleanData
+        _evalUrl
+    })
+    function mainpulationTarget(){}
+    function disableScript(){}
+    function restoreSscript(){}
+    function setGlobalEval(){}
+    function cloneCopyEvent(){}
+    function getAll(){}
+    function fixInput(){}
+    jQuery.fn.extend({
+        wrapAll
+        wrapInner
+        wrap
+        unwrap
+    })
+    
+     * **/
+
+</script>
+<script>
+
+    $('div').filter('.box').css('border','1px solid red');
+    $('div').filter(function(i,elem){
+        return elem.className == 'box'
+    }).css('border','1px solid red');
+</script>
+
+</body>
+</html>

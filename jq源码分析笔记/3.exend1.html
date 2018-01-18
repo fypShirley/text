@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    //$.extend(); $.fn.extend();
+    /**
+     *当只写一个对象自变量的时候，jQ中扩展插件的形式
+     * */
+
+    /*$.extend({//扩展工具方法
+        aa:function(){console.log('a');},
+        bb:function(){console.log('bb');}
+    })
+    $.fn.extend({//扩展jQ实例方法
+        aa:function(){console.log(3);},
+        bb:function(){console.log(4);}
+    })
+
+    $.aa();
+    $().aa();*/
+
+    /*$.extend()  : this -> $
+                  this.aa-> $.aaa();
+    $.fn.extend():this -> $.fn ($.fn是原型)
+                  this.aaa ->$().aaa
+    */
+
+
+    /**
+     *当写多个对象自变量的时候，后面的对象都是扩展到第一个对象上
+     * */
+
+   /* var a = {};
+    $.extend(a,{name:'hello'},{age:10});
+    console.log(a)
+*/
+
+    /**
+     *还可以深拷贝 和 浅拷贝
+     * */
+
+    var a = {};
+    var b = {name:{age:30}};
+//    $.extend(a,b);//默认浅拷贝
+    $.extend(true,a,b);//深拷贝
+//    a.name = 'hi';
+    a.name.age = 20;
+    console.log(a)
+    console.log(b)
+
+    /**
+     * 防止循环引用
+     * **/
+    var v = {};
+
+    console.log($.extend(v,{name:v}))
+
+
+    var d = {name:{obj:'it'}};
+    var f = {name:{age:30}};
+
+    $.extend(true,d,f);
+    console.log(f)
+    console.log(d)
+
+
+    /**
+     * 拷贝继承
+     * 类式继承
+     * 原型继承
+     * */
+</script>
+<div> </div>
+<div> </div>
+<div> </div>
+
+</body>
+</html>

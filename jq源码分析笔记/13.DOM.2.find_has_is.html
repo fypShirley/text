@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>划分</title>
+    <style>
+        div{width: 100px;height: 50px;background: #ccc;}
+        .box{background:lightblue;}
+    </style>
+</head>
+<body><!-- find()会找到所有的li -->
+   <!--  <ul>
+        <li></li>
+        <li>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li></li>
+    </ul> -->
+<div class="box"> 
+    <span></span>
+</div>
+<div id="div1">
+    <span id="span1"></span>
+</div>
+<div>
+    <span>
+
+    </span>
+</div>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    一些变量
+    jQuery.fn.event({
+        find
+        has
+        not
+        filter
+        is
+        closest
+        index
+        add
+        addBack
+    })
+    function sibling(){}
+    jQuery.each({
+        parent
+        parents
+        parentsUntil
+        next
+        prev
+        nextAll
+        prevAll
+        nextUntil
+        prevUntil
+        siblings
+        children
+        contents
+    })
+    jQuery.extend({
+        filter
+        dir
+        sibling
+    })
+    function winnow(){}
+    一些变量
+    jQuery.fn.extend({
+        text
+        append
+        prepend
+        before 
+        after
+        remove
+        empty
+        clone
+        html
+        replaceWith
+        detach
+        domManip
+    })
+    jQuery.each({
+        appendTo:"append"
+        prependTo:"prepend"
+        insertBefore:"before"
+        insertAfter:"after"
+        replaceAll:"replaceWith"
+    })
+    jQuery.extend({
+        clone
+        buildFragment
+        cleanData
+        _evalUrl
+    })
+    function mainpulationTarget(){}
+    function disableScript(){}
+    function restoreSscript(){}
+    function setGlobalEval(){}
+    function cloneCopyEvent(){}
+    function getAll(){}
+    function fixInput(){}
+    jQuery.fn.extend({
+        wrapAll
+        wrapInner
+        wrap
+        unwrap
+    })
+    
+     * **/
+
+</script>
+<script>
+    // $('ul').find('li').css('border','1px solid red');//针对包含的
+
+    // console.log($('#div1'.index()))//在所有兄弟中的排序
+
+    console.log($('#span1').index())//0 
+    console.log($('#span1').index('span'))//1 传参数，缩小范围 
+    console.log($('span').index('#span1'))//1 传参数，缩小范围
+    
+    // $('#div2').closest('.box',$('body').get(0)).css(); //限制范围
+</script>
+
+</body>
+</html>

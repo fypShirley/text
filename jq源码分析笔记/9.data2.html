@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>support</title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**数据缓冲对外的接口
+     jQuery.extend({   工具方法 调用new Data
+            acceptData
+            hasData    有没有数据 ->Data.prototype.hasData
+            data         ->Data.prototype.access (2参数get,3参数set)
+            removeData  ->Data.prototype.remove
+            _data      针对内部
+            _removeData针对内部
+      });
+
+     jQuery.fn.extend({实例方法
+           data
+           removeData
+      });
+
+
+     Data.prototype = {
+         key:分配映射
+            1、将自定义属性加到元素身上<div XX="1/2/3/4"></div>
+            2、往cache分配1/2/3/4对应的空的json
+            3、利用set给空的json赋值
+         set: 往cache设置
+         get: 从cache获取
+         access: set/get集合方法 (2参数get,3参数set)
+         remove: 删除cache某些值
+         hasData: 判断cache有没有某某
+         discard: 删除cache中相应属性
+      }
+     data内部有个：
+     var cache = {
+                1:{name:obj},
+                2:{age:obj}
+           };
+     * **/
+
+</script>
+<script>
+    $(function(){
+//        $('div').html('hello');
+        //alert($('div').html())//aaaaa
+
+      /*  $('#div1').data('name','hello');
+        $('#div1').data('age',30);*/
+
+        $('#div1').data({'name':'hello',age:30});//json
+
+        console.log($('#div1').data())
+
+        console.log($('#div3').get(0).dataset.miaovAll)
+
+        /**3599
+         * $('#div2').data('dataName','hi');//json
+        $('#div2').data('data-name','hello');//json
+
+        this.cache = {
+            1:{
+                dataName : 'hello',
+                'data-age':'hi'
+            }
+        }*/
+    })
+</script>
+<div id="div1">aaaaaaaa</div>
+<div id="div2">bbbbbbbbbb</div>
+<div id="div3" data-miaov-all="shirley">ccccccccccc</div>
+</body>
+</html>

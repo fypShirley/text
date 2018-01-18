@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>attr/prop</title>
+    <style>
+        #div1{width:100px;height: 100px;background: red;position: absolute;}
+    </style>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+     *实例方法
+     jQuery.fn.extend({
+            attr：     调工具方法
+            removeAttr 调工具方法
+            prop       调工具方法
+            removeProp
+
+            addClass
+            removeClass
+            toggleClass
+            hasClass
+            val
+     });
+     工具方法，基本对内使用的
+     jQuery.extend({
+          valHooks:
+          attr:
+          removeAttr:
+          attrHooks
+          propFix
+          prop
+          propHooks
+
+     });
+     * **/
+
+    $(function(){
+        /*$('#div1').attr('title','hello');//设置
+        $('#div1').attr('id');//获取
+
+        $('#div1').prop('title','hello');//设置
+        $('#div1').prop('id');//获取*/
+
+        //原生代码
+        var oDiv = document.getElementById('div1');
+
+        //attr:
+        oDiv.setAttribute('title','hello');
+
+        //prop:
+        oDiv.title = 'hello';
+        oDiv['title'] = 'hello';
+
+        //自定义属性:
+        /*$('#div1').attr('shirley1','我1');
+        $('#div1').prop('shirley2','我2');
+        $('#div1').attr('shirley1');
+        $('#div1').prop('shirley2');//获取不到
+        console.log($('#div1').attr('href'));//aaa.com
+        console.log($('#div1').prop('href'));//http://localhost:63342/JQ/2.0.3/aaa.com
+        */
+        $('#div1').removeAttr('shirley');
+        $('#div1').attr('shirley');//空
+        $('#div1').removeProp('id');
+        $('#div1').prop('id');//div1 还有
+
+
+        $(document).attr('title','hello');
+    })
+
+</script>
+<script>
+
+</script>
+<a id="div1" href="aaa.com" shirley="me">aaaaaaaaaa</a>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>trigger</title>
+    <style>
+        #div1{width: 100px;height: 100px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<input type="text" id="input1">
+<script src="jQ2.3.js"></script>
+
+<script>
+     /**
+     * jQuery.event = {
+        global 
+        add      三个重要的事件
+        remove   三个重要的事件
+        trigger  主动触发事件 
+        dispatch
+        handlers
+        props
+        fixHooks
+        keyHooks
+        mouseHooks
+        fic
+        special
+        simulate
+    }
+    jQuery.Event = {}
+    jQuery.Event.prototype = {
+        isDefaultPrevented
+        isPropagationStopped
+        idImmediatePropagationStopped
+        preventDafault
+        stopPropagation
+        stopImmediatePropagation
+    }
+    // 实例方法：
+    jQuery.fn.extend({
+        on             ->jQuery.event.add
+        one            ->上面的on
+        off            ->jQuery.event.remove
+        trigger       ->jQuery.event.trigger
+        triggerHandler ->jQuery.event.trigger(4个参数)
+    })
+
+    //6720:
+    click/mouseover/... ->on/trigger
+    //6732:
+    jQuery.fn.extend({
+        hover           ->mouseenter/mouseleave
+        bind            ->on
+        unbind          ->off
+        delegate        ->on
+        undelegate      ->off
+
+    })
+     * **/
+
+</script>
+<script>
+    
+   $('#input1').focus(function(){
+       $(this).css('background','red');
+   })
+   /* 主动调用 */
+//    $('#input1').trigger('focus'); 
+   $('#input1').triggerHandler('focus');//不会触发当前事件的默认行为，即没有focus聚焦
+</script>
+
+</body>
+</html>

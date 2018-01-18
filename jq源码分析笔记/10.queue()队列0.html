@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>support</title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+     jQuery.extend({工具方法
+        queue:   push()最后添加
+        dequeue: shift()第一个出队列
+        _queueHooks:
+     })
+
+     jQuery.fn.extend({实例方法
+        queue:
+        dequeue:
+        delay:
+        clearQueue:
+        promise:
+     })
+     * **/
+
+</script>
+<script>
+    $(function(){
+        function aaa(){console.log(1)}
+        function bbb(){console.log(2)}
+        //工具方法
+        /*$.queue(document,'q1',aaa);
+        $.queue(document,'q1',bbb);*/
+
+        $.queue(document,'q1',[aaa,bbb]);
+//        console.log($.queue(document,'q1'));
+        $.dequeue(document,'q1');//aaa()不仅shift出aaa,还执行了aaa()
+        $.dequeue(document,'q1');
+        /**
+         *队列中存储的都是函数：
+         q1:[ aaa(),bbb() ]
+         **/
+
+
+        //实例方法
+        $(document).queue('q1',aaa);
+        $(document).queue('q1',bbb);
+    });
+
+
+</script>
+</body>
+</html>

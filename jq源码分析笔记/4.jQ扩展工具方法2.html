@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    * jQ。extend({
+
+        expando : 生生唯一jQ字符串（内部）
+        noConflict() : 防止冲突
+        isReady : DOM是否加载完（内部）
+        readyWait : 等待多少文件的计数器（内部）
+        holdReady() : 推迟DOM触发
+        ready() : 准备DOM触发
+        isFunction() : 是否为函数
+        isArray() : 是否为数组
+        isWindow() : 是否为window
+        isNumeric : 是否为数字
+        type() : 判断数据类型
+        isPlainObject() : 是否为对象自变量
+        isEmptyObject() : 是否为空的对象
+        error() : 抛出异常
+        parseHTML() : 解析节点
+        parseJSON() : 解析JSON
+        parseXML() : 解析XML
+        noop() : 空函数
+        globalEval() : 全局解析JS
+        camelCase() : 转驼峰（内部）
+        nodeName() : 是否转为指定节点名（内部）
+        each() : 遍历集合
+        trim() : 去前后空格
+        makeArray() : 类数组转真数组
+        inArray() : 数组版indexOf
+        merge() : 合并数组
+        grep() : 过滤新数组
+        map() : 映射新数组
+        guid : 唯一标识符（内部）
+        proxy() : 改this指向
+        access() : 多功能值操作（内部）
+        now() : 当前时间
+        swap() : css交换（内部）
+
+     });
+        jQuery.ready.promise = function(){}监测DOM的异步操作（内部）
+        function isArraylike (){} 类似数组的判断（内部）
+     * */
+</script>
+<script>
+    /**
+     * globalEval
+    * */
+
+ /*    function tesr(){
+//       var newVa = {};
+        jQuery.globalEval("var newVar = true")
+    }
+    tesr();
+    console.log(newVar)
+
+    function test(){
+//        eval('var a = 1');
+
+        eval("var a = true");
+
+    }
+    test(); console.log(a);*/
+
+
+    /**
+     *  camelCase() : 转驼峰
+     * */
+
+    /**
+     * nodeName() : 是否转为指定节点名（内部）
+     * **/
+
+    /*$(function(){
+        console.log($.nodeName(document.documentElement,'html') );
+        console.log($.nodeName(document.body,'html') );
+        alert($.nodeName(document.body.nodeName) );
+    })*/
+
+  /*  var arr = {name:'dd',age:20};
+    $.each(arr,function(i,item){
+        console.log(i)
+        console.log(item)
+        return false;
+    })*/
+
+    /**
+     * makeArray
+     * **/
+   /* var str = 123;
+    console.log($.makeArray(str,{length:0}))
+*/
+    /**
+     * merge
+     * */
+/*
+    console.log($.merge(['a','b'],['c','d']))
+    console.log($.merge(['a','b'],{0:'c',1:'d'}))//外部
+    console.log($.merge({0:'a',1:'b',length:2},{0:'c',1:'d'}))
+    console.log($.merge({0:'a',1:'b',length:2},['c','d']))*/
+
+
+    /**
+     * grep() : 过滤新数组
+     * **/
+
+    var arr = [1,2,3,4,5];
+    arr = $.grep(arr,function(n,i){
+        return n>2;
+    },true) //[1,2]  不写true默认是false[3,4,5]
+    console.log(arr)
+</script>
+<div> </div>
+<div> </div>
+<div> </div>
+
+</body>
+</html>

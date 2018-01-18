@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>attr/prop</title>
+</head>
+<body>
+<div id="div1" class="box1"></div>
+<div  class="box1"></div>
+<div  class="box1"></div>
+<script src="jQ2.3.js"></script>
+
+
+<script>
+
+     /**
+     *实例方法
+     jQuery.fn.extend({
+            attr：     调工具方法
+            removeAttr 调工具方法
+            prop       调工具方法
+            removeProp
+
+            addClass
+            removeClass
+            toggleClass
+            hasClass
+            val
+     });
+     工具方法，基本对内使用的
+     jQuery.extend({
+          valHooks:
+          attr:
+          removeAttr:
+          attrHooks
+          propFix 兼容 -> propFix = {"for": "htmlFor", "class": "className"};
+          prop
+          propHooks 光标顺序
+
+     });
+     * **/
+
+</script>
+<script>
+ /*   $('#div1').addClass('box1,box2');//已经有的不再添加
+    $('#div1').removeClass('box2');//没有的删不掉
+    $('#div1').toggleClass('box1,box2');//调用add/remove*/
+
+ /** 回调 **/
+    /*$('div').addClass(function(index){
+        return 'box'+index
+    });*/
+
+ /**
+  * $('#div1')返回对象
+  * .addClass()调方法 再返回方法->调后面的方法html()
+  * **/
+// $('#div1').addClass('box2').html('链式操作').click(function(){console.log('123')});
+
+
+    /**
+     * removeClass()
+     *
+     * $('#div1').removeClass()不写参数，全部删除 3893
+     * **/
+//    $('#div1').removeClass();//全部删除
+
+    /**
+     $().toggleClass('box1 box2')
+         存在就removeClass,不存在就addClass
+
+      3895:
+         $().toggleClass('box1 box2',true)
+             toggleClass变成addClass
+
+         $().toggleClass('box1 box2',false)
+             toggleClass变成removeClass
+
+         $().toggleClass(false) 删掉已有的；$().toggleClass(true) 添加删掉已有的，成对出现的
+     **/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>attr/prop</title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+     *实例方法
+     jQuery.fn.extend({
+            attr：     调工具方法
+            removeAttr 调工具方法
+            prop       调工具方法
+            removeProp
+
+            addClass
+            removeClass
+            toggleClass
+            hasClass
+            val
+     });
+     工具方法，基本对内使用的
+     jQuery.extend({
+          valHooks:
+          attr:
+          removeAttr:
+          attrHooks
+          propFix 兼容 -> propFix = {"for": "htmlFor", "class": "className"};
+          prop
+          propHooks 光标顺序
+
+     });
+     * **/
+
+   // "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped
+
+</script>
+<script>
+    $('#btn').attr('checked','checked');
+//    $('input').attr('checked','true');
+//    $('input').attr('checked');//check
+//    $('input').prop('checked');//true
+
+    propFix = {"for": "htmlFor", "class": "className"};
+</script>
+<input id="btn" type="checkbox" />
+</body>
+</html>

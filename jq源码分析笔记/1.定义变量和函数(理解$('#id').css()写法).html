@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //传window 1.查找速度快，2,压缩
+
+    //防止undefined被修改
+    /*var undefined = 10;
+    alert(undefined)*/
+
+   //"use strict" 严格模式
+    a = 10;
+
+   // rootjQuery = jQuery(document); 定义为变量，代码可维护
+    var iSpeed  =10;
+    a = a + iSpeed;
+
+
+    //core_strundefined = typeof undefined,core_strundefined存的是字符串的undefined
+    //判断undefined
+    window.a = undefined;
+    typeof window.a  == 'undefined';
+
+
+
+
+
+    /*面向对象一般写法*/
+    function Aaa(){}
+    Aaa.prototype.init = function(){};
+    Aaa.prototype.css = function(){};
+    var a1 = new Aaa();
+    a1.init();
+    a1.css();
+
+    /*jQ 没有繁琐的写法*/
+    function jQuery(){
+        return new jQuery.prototype.init();//返回一个构造函数
+    }
+    jQuery.prototype.init = function(){};
+    jQuery.prototype.css = function(){};
+
+    jQuery().css();//jQuery()等于a1.init() 省略了a1的声明
+
+
+    /**
+     jQuery() -> 调用函数new jQuery.prototype.init();
+
+        283行：jQuery.fn.init.prototype = jQuery.fn;（fn就是prototype 96行）
+
+              因为：jQuery.fn -> jQuery.prototype
+
+             所以：jQuery.fn.init.prototype = jQuery.prototype
+
+            所以：jQuery().css()可以找到jQuery.prototype.css方法
+     */
+    /**
+      $('#sss').css();
+      $('#sss').html();
+
+     $('#sss')是个对象
+     函数调用，执行结果是个对象：
+       63行： return new jQuery.fn.init()
+     对象写法：
+     var arr = new Array();
+     arr.push();
+     arr.sort();
+     * */
+</script>
+</body>
+</html>

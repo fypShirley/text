@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>buildFragment</title>
+    <style>
+        div{width: 100px;height: 50px;background: #ccc;}
+        .box{background:lightblue;}
+    </style>
+</head>
+<body>
+  <span></span>
+  <span></span>
+  <span></span>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    一些变量
+    jQuery.fn.event({
+        find
+        has
+        not
+        filter
+        is
+        closest
+        index
+        add
+        addBack
+    })
+    function sibling(){}
+    jQuery.each({
+        parent
+        parents
+        parentsUntil
+        next
+        prev
+        nextAll
+        prevAll
+        nextUntil
+        prevUntil
+        siblings
+        children
+        contents
+    })
+    jQuery.extend({
+        filter
+        dir
+        sibling
+    })
+    function winnow(){}
+    一些变量
+    jQuery.fn.extend({
+        text
+        append
+        prepend
+        before 
+        after
+        remove   -> cleanData
+        empty
+        clone
+        html
+        replaceWith
+        detach   -> cleanData
+        domManip
+    })
+    jQuery.each({
+        appendTo:"append"
+        prependTo:"prepend"
+        insertBefore:"before"
+        insertAfter:"after"
+        replaceAll:"replaceWith"
+    })
+    jQuery.extend({
+        clone
+        buildFragment
+        cleanData
+        _evalUrl
+    })
+    function mainpulationTarget(){}
+    function disableScript(){}
+    function restoreSscript(){}
+    function setGlobalEval(){}
+    function cloneCopyEvent(){}
+    function getAll(){} 获取所有子元素
+    function fixInput(){}
+    jQuery.fn.extend({
+        wrapAll
+        wrapInner
+        wrap
+        unwrap
+    })
+    
+     * **/
+
+</script>
+
+<script>alert(1)</script>
+
+<script>
+    $('span').wrap('div') //每个span外面包装了div
+    $('span').wrapAll('div') //整体包装了div,中间别的元素会被分割出去  
+    $('span').wrapInner('div')//所有子节点包个div
+    $('span').unwrap();//删除父级，父级是body是不可被删的
+    /* 
+      
+    */
+</script>
+
+</body>
+</html>

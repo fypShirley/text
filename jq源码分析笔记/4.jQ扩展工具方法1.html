@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    * jQ。extend({
+
+        expando : 生生唯一jQ字符串（内部）
+        noConflict() : 防止冲突
+        isReady : DOM是否加载完（内部）
+        readyWait : 等待多少文件的计数器（内部）
+        holdReady() : 推迟DOM触发
+        ready() : 准备DOM触发
+        isFunction() : 是否为函数
+        isArray() : 是否为数组
+        isWindow() : 是否为window
+        isNumeric : 是否为数字
+        type() : 判断数据类型
+        isPlainObject() : 是否为对象自变量
+        isEmptyObject() : 是否为空的对象
+        error() : 抛出异常
+        parseHTML() : 解析节点
+        parseJSON() : 解析JSON
+        parseXML() : 解析XML
+        noop() : 空函数
+        globalEval() : 全局解析JS
+        camelCase() : 转驼峰
+        nodeName() : 是否转为指定节点名（内部）
+        each() : 遍历集合
+        trim() : 去前后空格
+        makeArray() : 类数组转真数组
+        inArray() : 数组版indexOf
+        merge() : 合并数组
+        grep() : 过滤新数组
+        map() : 映射新数组
+        guid : 唯一标识符（内部）
+        proxy() : 改this指向
+        access() : 多功能值操作（内部）
+        now() : 当前时间
+        swap() : css交换（内部）
+
+     });
+        jQuery.ready.promise = function(){}监测DOM的异步操作（内部）
+        function isArraylike (){} 类似数组的判断（内部）
+     * */
+</script>
+<script>
+    /**
+     * type
+    * */
+
+//    alert($.type(undefined))//'undefined'
+    var a = {};
+    console.log($.type(a))
+
+    /**isPlainObject
+     * */
+
+    console.log($.isPlainObject(a))
+
+
+    function Aaa(){}
+
+    Aaa.prototype.constructor = Aaa;
+    Aaa.prototype.show = function(){}
+    console.log(Aaa.prototype)
+    for(var attr in Aaa.prototype){
+        console.log(attr)//show 自己写的才可以获取到
+    }
+
+    /**
+     * parseHTML
+     * */
+    var str = '<li></li><li></li><script><\/script>'
+    console.log($.parseHTML(str,document,true))//根节点
+
+    /*
+    $('<li></li>')
+        ->$.parseHTML();
+        单标签490 context.createElement( parsed[1] )
+        多标签493 jQuery.buildFragment( [ data ], context, scripts );
+    * */
+
+
+    /**
+     * parseJSON
+     *
+     * JSON.parse
+     * JSON.stringify
+     * */
+
+    var str_ = '{name:"hello"}';
+    ;
+    console.log(str_)
+    console.log($.parseJSON(str_))
+
+</script>
+<div> </div>
+<div> </div>
+<div> </div>
+
+</body>
+</html>

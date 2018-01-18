@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+<script>
+    /**Callbacks
+     * add :
+     * LiST []存函数
+     * for()循环执行
+     * **/
+    /*function aaa(){console.log('a')}
+    function ccc(){console.log('c')}
+
+    var cb = $.Callbacks();
+    (function(){
+        function bbb(){console.log('b')}
+        cb.add(bbb);
+    })()
+
+
+    cb.add(aaa);
+    cb.add(ccc);
+    cb.remove(aaa)//删除
+
+    cb.fire();*/
+
+    /**
+     * jQuery.Callbacks = function( options )
+     * list = []
+     *
+     * options:
+          once
+          memory     -> 执行所有的函数
+          unique     ->数组去重  add/remove add for中
+          stopOnFalse ->当前函数中有false,后续函数不会再执行  fire for中
+
+
+          add        -> push进list
+          remove
+          has
+          empty
+          disable
+          disabled
+          fireWidth
+          fire       -> 调用fireWidth  -> 调用fire = function(data){for循环list}
+          fired
+     * **/
+
+    function aaa(){console.log('a');}
+    function bbb(){console.log('b')}
+
+   /* var cb = $.Callbacks('once');
+    //once -> fire只触发一次
+    cb.add(aaa);
+    cb.add(bbb);
+    cb.fire();
+    cb.fire();*/
+    var cb = $.Callbacks('memory')
+    //memory -> 执行所有的函数
+    cb.add(aaa);
+    cb.fire('hello');
+    cb.add(bbb);//cb.add(aaa,bbb)
+
+    /*$.Callbacks('once memory')
+    * => options:{once:true,memory:true}
+    * optionsCache:{'once memory':{once:true,memory:true}}
+    * */
+
+</script>
+</body>
+</html>

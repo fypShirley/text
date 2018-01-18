@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+<script>
+/**
+ *  Promise没有状态，防止状态修改
+ *      state always then promise pipe
+ *      done fail progress
+ *
+ *
+ *  deferred
+ *      resolve reject notify
+ *
+ *      state always then promise pipe
+ *      done fail progress
+ *  **/
+</script>
+<script>
+
+    function aaa(){
+        var dfd = $.Deferred();
+        setTimeout(function(){
+            dfd.resolve();
+        },1000);
+
+        return dfd;
+    }
+    var newDfd = aaa();//1.0
+    newDfd.done(function(){console.log('成功')})//1.0
+        .fail(function(){console.log('失败')})//2.0
+    newDfd.reject();//2.0
+</script>
+</body>
+</html>

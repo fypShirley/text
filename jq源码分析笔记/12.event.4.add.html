@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>trigger</title>
+    <style>
+        #div1{width: 100px;height: 100px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1">div</div>
+<span id=span1>span</span>
+<script src="jQ2.3.js"></script>
+
+<script>
+     /**
+     * jQuery.event = {
+        global 
+        add      三个重要的事件
+        remove   三个重要的事件
+        trigger  主动触发事件 
+        dispatch 分发事件的具体操作
+        handlers 函数执行顺序的操作
+        props
+        fixHooks
+        keyHooks
+        mouseHooks
+        fix      对event对象的兼容处理
+        special  特殊事件的处理
+        simulate
+    }
+    jQuery.Event = {}
+    jQuery.Event.prototype = {
+        isDefaultPrevented
+        isPropagationStopped
+        idImmediatePropagationStopped
+        preventDafault
+        stopPropagation
+        stopImmediatePropagation
+    }
+    // 实例方法：
+    jQuery.fn.extend({
+        on             ->jQuery.event.add
+        one            ->上面的on
+        off            ->jQuery.event.remove
+        trigger       ->jQuery.event.trigger
+        triggerHandler ->jQuery.event.trigger(4个参数)
+    })
+
+    //6720:
+    click/mouseover/... ->on/trigger
+    //6732:
+    jQuery.fn.extend({
+        hover           ->mouseenter/mouseleave
+        bind            ->on
+        unbind          ->off
+        delegate        ->on
+        undelegate      ->off
+
+    })
+     * **/
+
+</script>
+<script>
+$(function(){
+    $('#div1').on('click',function(){
+        alert(1)
+    })
+  
+    $('#div1').on('click',function(){
+        alert(2)
+    })
+    /* 
+        on->jQuery.event.add->jQuery.event.dispatch
+                            ->jQuery.event.fix:event/jQuery.event.special:事件/jQuery.event.handlers：队列
+    */
+ 
+    $('body').on('click','span:first',function(){
+        alert(4)
+    })
+    $('#div1').on('click','p:first',function(c){
+        alert(5);
+    });
+    //5 4 1 2 实际 委托越深，执行越早，所以执行顺序通过jQuery.event.handlers完成
+    //数据中：4 5 1 2 
+
+
+
+   /*  $('#div1').on('clcik','span:first',function(){//needsContext:true
+        alert(5)
+    })
+
+    $('#div1').on('mouseover',function(){//needsContext:undefined
+        alert(3)
+    }) */
+
+    // 命名空间namespace:aaa
+    // $('#div1').on('click.aaa',function(){alert(1)})
+   
+    // 命名空间namespace:""
+    // $('#div1').on('click',function(){alert(1)})
+
+    // $('#div1').trigger('click.aaa');
+
+    // $('#div1').on('clcik mouseover mousedown'),function(){alert(1)}//4371
+    /* 数据缓存
+        var elemData = {
+            events:{
+                'click':[
+                    {
+                        data:
+                        guid:1//唯一标识
+                        handle:function(){}//普通事件函数
+                        namespace:""
+                        needsContext:伪类操作时为真
+                        origType:'click'原始类型
+                        selector:'span'
+                        type:'click'现在的类型
+                    },
+                    {},
+                    {},
+                    deletaCount:委托个数,length
+                ],
+                'mouseover':[{}]
+            },
+            handle:function(e){}//是事件真正的函数
+        }
+    */
+});
+</script>
+
+</body>
+</html>

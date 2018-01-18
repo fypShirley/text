@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>remove_detach</title>
+    <style>
+        div{width: 100px;height: 50px;background: #ccc;}
+        .box{background:lightblue;}
+    </style>
+</head>
+<body>
+   <div>
+       <span></span>
+       <p></p>
+   </div>
+   
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+    一些变量
+    jQuery.fn.event({
+        find
+        has
+        not
+        filter
+        is
+        closest
+        index
+        add
+        addBack
+    })
+    function sibling(){}
+    jQuery.each({
+        parent
+        parents
+        parentsUntil
+        next
+        prev
+        nextAll
+        prevAll
+        nextUntil
+        prevUntil
+        siblings
+        children
+        contents
+    })
+    jQuery.extend({
+        filter
+        dir
+        sibling
+    })
+    function winnow(){}
+    一些变量
+    jQuery.fn.extend({
+        text
+        append
+        prepend
+        before 
+        after
+        remove   -> cleanData
+        empty
+        clone
+        html
+        replaceWith
+        detach   -> cleanData
+        domManip
+    })
+    jQuery.each({
+        appendTo:"append"
+        prependTo:"prepend"
+        insertBefore:"before"
+        insertAfter:"after"
+        replaceAll:"replaceWith"
+    })
+    jQuery.extend({
+        clone
+        buildFragment
+        cleanData
+        _evalUrl
+    })
+    function mainpulationTarget(){}
+    function disableScript(){}
+    function restoreSscript(){}
+    function setGlobalEval(){}
+    function cloneCopyEvent(){}
+    function getAll(){} 获取所有子元素
+    function fixInput(){}
+    jQuery.fn.extend({
+        wrapAll
+        wrapInner
+        wrap
+        unwrap
+    })
+    
+     * **/
+
+</script>
+
+<script>alert(1)</script>
+
+<script>
+    /* 
+      //remove删完之后，所有的缓存数据 ，事件多不存在了，
+         script删完再加回来，执行2次
+      //detach删完之后，所有的缓存数据 ，事件多依然存在
+        script删完再加回来，执行1次
+
+        $('div').click(function(){alert(123)})
+        
+        var $div =  $('div').remove('box');//删除的结果
+      
+        $('body').append($div)再添加回来
+
+         
+    */
+
+    /* 
+        empty htmL清空
+    */
+
+    /* 
+        clone
+        $('div').click(function(){alert(123)})
+        $('span').click(function(){alert(456)})子元素
+        var cloneDiv = $('div').clone(true); true事件也克隆过来，默认第二个参数同第一个参数一样，子元素事件也克隆
+
+         var cloneDiv = $('div').clone(true，false); true自身事件也克隆过来，子元素事件不克隆
+        $('body').append(cloneDiv)
+    */
+
+    /* 
+        html() 5535
+        $('span').get(0).innerHTMl = '<script>alert(1)<script/>'不触发
+        $('span').html('<script>alert(1)<script/>');//触发
+
+    */
+</script>
+
+</body>
+</html>

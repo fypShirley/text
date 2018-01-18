@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+<script>
+
+    /**
+     * when 多延迟对象
+     *  **/
+
+    /**
+     *
+     *
+     * $.when(arguments).done(function(){
+     *      alert('成功')
+     * })
+     *
+     * 计数器count = 4
+     * a() -> arguments[0] done() 触发后 3
+     * b() -> arguments[1] done() 触发后 2
+     * c() -> arguments[2] done() 触发后 1
+     * d() -> arguments[3] done() 触发后 0
+     *
+     * count = 0 触发resolve() -> 触发$.when().done()
+     *
+     * return $.Deferred();
+     * **/
+</script>
+<script>
+
+
+    /*function aaa (){
+        var dfd = $.Deferred();
+        dfd.resolve();
+        return dfd;
+    }
+    function bbb (){
+        var dfd = $.Deferred();
+//        dfd.resolve();
+        dfd.reject();
+        return dfd;
+    }
+    $.when(aaa(),bbb()).done(function(){
+        alert('成功');//所以函数执行完
+    }).fail(function(){
+        alert('失败');//只要有一个函数未完成
+    });*/
+
+    function aaa (){
+         var dfd = $.Deferred();
+         dfd.resolve();
+         return dfd;
+     }
+     function bbb (){
+         var dfd = $.Deferred();
+         dfd.reject();
+         return dfd;
+     }
+     $.when(aaa(),bbb()).done(function(){
+         alert('成功');//所以函数执行完
+         }).fail(function(){
+         alert('失败');//只要有一个函数未完成
+     });
+
+    //失败
+    //bb()不写return 结果就是成功 则when跳过bb(),不认为是延迟对象
+</script>
+</body>
+</html>

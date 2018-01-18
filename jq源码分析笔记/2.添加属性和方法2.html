@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+
+
+
+</script>
+
+<script>
+
+   /*** init ***/
+    var aDiv = document.getElementsByTagName('div');
+    console.log($.makeArray(aDiv,{length:0}))//{0:,1:,length:}
+
+
+    /** get()* */
+    /*$('div').get(0).innerHTML = '2222';
+    $('div').get(-1).innerHTML = '2222';*/
+    for(var i=0;i<$('div').get().length;i++){
+        $('div').get(i).innerHTML = '2222222';
+    }
+
+    /**220 pushStack
+     * 队列，排队，先进先出（买火车票）
+     * 栈，先进后出（坐电梯）
+     * **/
+    $(function(){
+
+        /**
+         * 栈：
+         * span
+         * p
+        */
+         /*$('p').pushStack($('span')).css('background','red');
+        $('p').pushStack($('span')).end().css('background','yellow');*/
+
+
+        /**
+        * 栈：
+         * 1,3p
+         * 4个p end()进入
+        * */
+        $('p').slice(1,3).css('background','yellow').end().css('color','red');
+    });
+
+    /**259  eq() **/
+
+    $('p').eq(0).css('background','yellow');
+
+    /* map() */
+    var arr1 = ['a','b','c'];
+    var arr2 = $.map(arr1,function(elem,i){
+        return elem+i;
+    })
+//    console.log(arr1)
+    console.log(arr2)//['a0','b1','c2']
+
+</script>
+<div> </div>
+<div> </div>
+<div> </div>
+
+<p>PPPPPPPPP0</p>
+<p>PPPPPPPPP1</p>
+<p>PPPPPPPPP2</p>
+<p>PPPPPPPPP3</p>
+<p>PPPPPPPPP4</p>
+
+<p>PPPPPPPPP</p>
+<span>span</span>
+
+</body>
+</html>

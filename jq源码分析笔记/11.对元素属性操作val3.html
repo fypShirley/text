@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>attr/prop</title>
+</head>
+<body>
+<input type="text" id="input" value="hello"/>
+<select name="" id="select">
+    <option value="111">111</option>
+    <option value="222">222</option>
+    <option value="333">333</option>
+</select>
+<select name="" id="select2"  multiple>
+    <option value="111">111</option>
+    <option value="222" disabled>222</option>
+    <option value="333">333</option>
+</select>
+<input type="checkbox" id="checkbox" />
+
+<script src="jQ2.3.js"></script>
+
+<script>
+    /**
+     *实例方法
+     jQuery.fn.extend({
+            attr：     调工具方法
+            removeAttr 调工具方法
+            prop       调工具方法
+            removeProp
+
+            addClass
+            removeClass
+            toggleClass
+            hasClass
+            val
+     });
+     工具方法，基本对内使用的
+     jQuery.extend({
+          valHooks:
+          attr:
+          removeAttr:
+          attrHooks
+          propFix 兼容 -> propFix = {"for": "htmlFor", "class": "className"};
+          prop
+          propHooks 光标顺序
+
+     });
+
+
+     valHooks : option select radio checkbox
+     * **/
+
+
+    console.log($('#checkbox').get(0).type);/*checkbox*/
+
+
+    console.log($('#select').get(0).type);  /*select-one*/
+    console.log($('#select2').get(0).type);  /*多选操作 select-multiple*/
+    console.log($('option').eq(0).get(0).type);  /*空的*/
+    console.log($('option').eq(0).get(0).nodeName);  /*OPTION*/
+
+
+    console.log($('option').eq(0).get(0).value);//hello
+    console.log($('option').eq(1).get(0).value);//不写：默认是空的
+    console.log($('option').eq(1).get(0).value.specified);//undefined
+
+
+    $('#checkbox').click(function(){
+        console.log($('#select').val())//11
+        console.log($('#select2').val())//[111,222,333]
+    })
+
+</script>
+<script>
+
+</script>
+
+</body>
+</html>

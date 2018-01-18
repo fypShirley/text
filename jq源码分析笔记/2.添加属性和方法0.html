@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+
+   /* jQuery.fn = jQuery.prototype = {
+        'jquery' : '版本',
+        'constructor' : '修正指向问题',
+        'init()' : '初始化和参数管理',
+        'length' : 'this对象的长度',
+        'toArray()' :转数组',
+        'get()' : '转原生集合',
+        'pushStack()' : 'jQ对象的入栈',
+        'each()' : '遍历集合',
+        'ready()' : 'DOM加载的接口',
+        'slice()' : '集合的截取',
+        'first()' : '集合的第一项',
+        'last()' : '集合的最后一项',
+        'eq()' : '集合的指定项',
+        'map()' : '返回新集合',
+
+    }*/
+
+</script>
+
+<script>
+    console.log($().jquery)
+
+/*** constructor ***/
+    function Aaa(){}
+    //Aaa.prototype.constructor = Aaa;//自动生成的
+   //Aaa.prototype.constructor = Array;//容易被修改
+
+   /* Aaa.prototype.name = 'hello';//添加
+    Aaa.prototype.age = 20;*///alert -> Aaa()
+
+
+    Aaa.prototype = { // json覆盖 所以a1的构造函数指向对象
+//        constructor:Aaa,
+        name:'hello',
+        age:20
+    };//alert - > object
+
+
+    var a1 = new Aaa();
+    console.log(a1.constructor);
+
+
+/*** init ***/
+    //selector参数
+       /*$(function(){
+           console.log($('li').css({background:'red'}))
+
+       })*/
+
+    //$('li')
+    //var  aLi = document.getElementsByTagName('li');
+
+    //.css({background:'red'});
+    /*for(var i=0;i<aLi.length;i++){
+        aLi[i].style.background = 'red';
+    }*/
+
+    /**
+     * jQ做的
+     */
+        /*this = {//存的形式
+            0 : 'li',
+            1 : 'li',
+            2 : 'li',
+            length : 3
+        }
+        for(var i=0;i<this.length;i++){
+            this[i].style.backgrond = 'red';
+        }*/
+
+
+</script>
+<li>  </li>
+<li>  </li>
+<li>  </li>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jQ2.3.js"></script>
+
+<script>
+
+   /* jQuery.fn = jQuery.prototype = {
+        jquery : '版本',
+        constructor : '修正指向问题',
+        'init()' : '初始化和参数管理',
+        selector : '选择器',
+        length : 'this的长度',
+        jquery : '版本',
+        jquery : '版本',
+        jquery : '版本',
+    }*/
+
+</script>
+
+<script>
+
+/*** init ***/
+if('111行'){//找标签
+    match = [ null, '<li>', null ];//$('<li>')
+    match = [ null, '<li>1</li><li>2</li>', null ];//$('<li>1</li><li>2</li>');
+}
+else{//115
+    //match = rquickExpr.exec( selector );  防止注入
+
+    /**
+     * 如果 exec() 找到了匹配的文本，则返回一个结果数组。
+     * 否则，返回 null。
+     * 第 0 个元素是与正则表达式相匹配的文本，
+     * 第 1 个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本（如果有的话），
+     * 第 2 个元素是与 RegExpObject 的第 2 个子表达式相匹配的文本（如果有的话），
+     * 以此类推。
+     *
+     *
+
+    /*** rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/
+                    匹配标签( (<[\w\W]+>)[ )加文字()[^>]*) 或 #id
+                    <p>aaa 或 #div1
+
+            第1个子项：<[\w\W]+>
+            第2个子项：[\w-]*
+     ***/
+
+
+    math = null; //$('.box') $('div') $('#div1 div.box')
+
+    math = ['#div1',null,'div1']; //$('#div1')
+
+    math = ['<li>hello','<li>',null];//$('<li>hello')
+}
+
+
+if(120){//能进的 $('<li>')  $('#div1')
+
+    if(math[1]){//创建标签$('<li>')
+
+        //124
+            $('<li>',document);
+            $('<li>',$(document));
+        //最终得到的都是原始的document
+        /*
+        $('<li>1</li><li>2</li>').appendTo('ul');
+            this = {
+                0:'li'
+                1:'li'
+                length:2
+            }
+
+         */
+
+
+
+    }else{//选择id $('#div1')
+
+    }
+
+}
+    $(function (){
+      $('<li>hello').appendTo($('ul'));
+        //等同于$('<li>')  <li></li>
+    })();
+
+</script>
+<ul>
+    <li>  </li>
+    <li>  </li>
+    <li>  </li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>trigger</title>
+    <style>
+        #div1{width: 100px;height: 100px;background: red;}
+    </style>
+</head>
+<body>
+<div id="div1">div</div>
+<span id=span1>span</span>
+<script src="jQ2.3.js"></script>
+
+<script>
+     /**
+     * jQuery.event = {
+        global      事件的全局属性，（源码还没用到）
+        add         三个重要的事件
+        remove      三个重要的事件
+        trigger     主动触发事件 
+        dispatch    分发事件的具体操作
+        handlers    函数执行顺序的操作
+        props       jQ中共享原生JS的event属性
+        fixHooks    收集event兼容的集合
+        keyHooks    键盘的event兼容
+        mouseHooks  鼠标的event兼容
+        fix         对event对象的兼容处理
+        special     特殊事件的处理
+        simulate
+    }
+    jQuery.Event = {}
+    jQuery.Event.prototype = {
+        isDefaultPrevented
+        isPropagationStopped
+        idImmediatePropagationStopped
+        preventDafault
+        stopPropagation
+        stopImmediatePropagation
+    }
+    // 实例方法：
+    jQuery.fn.extend({
+        on             ->jQuery.event.add
+        one            ->上面的on
+        off            ->jQuery.event.remove
+        trigger       ->jQuery.event.trigger
+        triggerHandler ->jQuery.event.trigger(4个参数)
+    })
+
+    //6720:
+    click/mouseover/... ->on/trigger
+    //6732:
+    jQuery.fn.extend({
+        hover           ->mouseenter/mouseleave
+        bind            ->on
+        unbind          ->off
+        delegate        ->on
+        undelegate      ->off
+
+    })
+     * **/
+
+</script>
+<script>
+/* $(function(){
+    $('#div1').on('click',function(event){//4677
+        alert(2);
+        event.preventDefault();
+        event.stopPropagation();
+        return false;//阻止冒泡和阻止默认事件
+    })
+}); */
+
+document.onclick = function(ev){
+    console.log(ev.pageY);/* 到页面顶端 有兼容性 */
+    console.log(ev.clientY);/* 到可视区顶端 */
+}
+
+$(document).on('mousedown',function(ev){/* 不要用click */
+    alert(ev.which);/* 左：1，中：2，右：3 */
+    /*
+        ev：是jQ的事件
+        ev.originalEvent:是原生的event
+    */
+})
+
+document.onkeydown = function(ev){
+    var ev = ev || window.event;
+    console.log(ev.keyCode)
+}
+document.onkeypress = function(ev){
+    var ev = ev || window.event;
+    console.log(ev.keyCode)//都是0
+    console.log(ev.charCode)//才是对应值
+}
+
+</script>
+
+</body>
+</html>
