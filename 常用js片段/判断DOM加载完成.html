@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>判断DOM加载完成后</title>
+</head>
+<body>
+
+    <script>
+		 function a()
+        {
+            if(document && document.getElementsByTagName && document.getElementById && document.body)
+            {
+
+                //DOM加载完成
+                clearInterval(timer);
+            }
+        }
+        var timer = setInterval(a,10);//设计一个定时器，循环调用a函数
+    </script>
+</body>
+</html>
